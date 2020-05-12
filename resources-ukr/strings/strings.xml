@@ -1,0 +1,21 @@
+<strings>    
+    
+	<string id="noServiceNetwork"> Відсутнє з'єднання </string>
+	<string id="chckPConnect">Зв'язок(!) </string>
+	
+    <string id="newCases">+</string> 
+    <string id="totalCases">Всього: </string>
+    <string id="totalDeath"> Смертей: </string>
+    <string id="newDeath"> Н. смертей: </string>
+    <string id="totalRecovered">Одужало: </string>
+    
+    <string id="updated">онов. </string>
+    <string id="justNow" scope="glance">щойно </string>
+    <string id="hoursAgo" scope="glance"> $1$ годин тому </string>
+    <string id="minutesAgo" scope="glance"> $1$ хв тому </string>
+    
+    <string id="world">Весь Світ </string>
+    
+    <string id="loading">Завантаження...</string>
+    
+</strings>

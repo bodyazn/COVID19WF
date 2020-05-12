@@ -1,0 +1,37 @@
+<layout id="WatchFaceS">
+
+	<bitmap id="coronavirus_icon" x="center" y="-1%" filename="../drawables/launcher_icon.png" />
+	
+	<label id="BattLbl" x="14%" y="17%" font="Graphics.FONT_XTINY" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" background="Graphics.COLOR_BLACK"
+text="99%"/>
+	
+	<bitmap id="heart_icon" x="83%" y="21%" filename="../drawables/heart16x16.png" />
+	<label id="HRLbl" x="86%" y="27%" font="Graphics.FONT_XTINY" 
+		justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" background="Graphics.COLOR_BLACK"
+		text="--"/>
+	
+	
+	<label id="DateLbl" x="center" y="36%" font="Graphics.FONT_SYSTEM_TINY" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_LT_GRAY" background="Graphics.COLOR_BLACK"
+text="@Strings.loading"/>
+
+    <label id="HoursLabel" x="center" y="12%" font="Graphics.FONT_SYSTEM_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_RIGHT" 
+    	color="Graphics.COLOR_WHITE" />
+    
+    <label id="MinutesLabel" x="center" y="12%" font="Graphics.FONT_SYSTEM_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_LEFT" 
+    	color="Graphics.COLOR_LT_GRAY" />
+    	
+<label id="NCLbl" x="center" y="50%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_YELLOW" background="Graphics.COLOR_BLACK" />
+
+<label id="TCLbl" x="center" y="62%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_ORANGE" background="Graphics.COLOR_BLACK" />
+
+<label id="TRLbl" x="center" y="73%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_GREEN" background="Graphics.COLOR_BLACK" />
+
+<label id="UpdLbl" x="center" y="84%" font="Graphics.FONT_XTINY" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_LT_GRAY" background="Graphics.COLOR_BLACK"
+text="@Strings.loading"/>    	
+</layout>

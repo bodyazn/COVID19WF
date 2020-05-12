@@ -1,0 +1,21 @@
+<strings>
+    <string id="AppName">COVID19WatchFace</string>
+    
+	<string id="noServiceNetwork"> No service network </string>
+	<string id="chckPConnect">Connection(!): </string>
+
+    <string id="newCases">+</string> 
+    <string id="totalCases">Cases: </string>
+    <string id="totalDeath"> Total death: </string>
+    <string id="newDeath"> New death: </string>
+    <string id="totalRecovered">Recov: </string>
+    
+    <string id="updated">upd</string>
+    <string id="justNow" scope="glance"> just now</string>
+    <string id="hoursAgo" scope="glance"> $1$ hours ago</string>
+    <string id="minutesAgo" scope="glance"> $1$ mins ago</string>
+    
+    <string id="world">Worldwide   </string>
+    
+    <string id="loading">Loading...</string>
+</strings>

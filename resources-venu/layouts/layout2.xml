@@ -1,0 +1,58 @@
+<layout id="WatchFaceD">
+
+	<bitmap id="coronavirus_icon" x="center" y="2%" filename="../drawables/launcher_icon.png" />
+	
+	<label id="BattLbl" x="9%" y="32%" font="Graphics.FONT_XTINY" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" background="Graphics.COLOR_BLACK"
+text="99%"/>
+	
+	<bitmap id="heart_icon" x="83%" y="21%" filename="../drawables/heart16x16.png" />
+	<label id="HRLbl" x="90%" y="27%" font="Graphics.FONT_XTINY" 
+		justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" background="Graphics.COLOR_BLACK"
+		text="--"/>
+	
+
+	<label id="DateLbl" x="center" y="10%" font="Graphics.FONT_XTINY" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_LT_GRAY" background="Graphics.COLOR_BLACK"
+text="@Strings.loading"/>
+
+    <label id="HoursLabel" x="center" y="14%" font="Graphics.FONT_SYSTEM_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_RIGHT" 
+    	color="Graphics.COLOR_WHITE" />
+    
+    <label id="MinutesLabel" x="center" y="14%" font="Graphics.FONT_SYSTEM_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_LEFT" 
+    	color="Graphics.COLOR_LT_GRAY" />
+
+
+<label id="WwLbl" x="center" y="49%" font="Graphics.FONT_XTINY" 
+justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_LT_GRAY" background="Graphics.COLOR_BLACK"
+text="@Strings.world"/> 
+
+<label id="CnLbl" x="center" y="49%" font="Graphics.FONT_XTINY" 
+justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" background="Graphics.COLOR_BLACK"
+text="@Strings.world"/>
+   	
+<label id="NCLbl" x="center" y="56%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_YELLOW" background="Graphics.COLOR_BLACK" />
+
+<label id="NCLbl_c" x="center" y="56%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_YELLOW" background="Graphics.COLOR_BLACK" />
+
+
+<label id="TCLbl" x="center" y="67%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_ORANGE" background="Graphics.COLOR_BLACK" />
+
+<label id="TCLbl_c" x="center" y="67%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_ORANGE" background="Graphics.COLOR_BLACK" />
+
+
+<label id="TRLbl" x="center" y="78%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_GREEN" background="Graphics.COLOR_BLACK" />
+
+<label id="TRLbl_c" x="center" y="78%" font="Graphics.FONT_SMALL" 
+justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_GREEN" background="Graphics.COLOR_BLACK" />
+
+<label id="UpdLbl" x="center" y="88%" font="Graphics.FONT_XTINY" 
+justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_LT_GRAY" background="Graphics.COLOR_BLACK"
+text="@Strings.loading"/>    
+
+</layout>

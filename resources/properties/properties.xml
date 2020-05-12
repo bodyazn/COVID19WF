@@ -1,0 +1,25 @@
+<properties> 
+
+	<!-- 
+	<property id="api_key" type="string">*** YOUR API KEY ***</property>
+	 -->
+
+	<!-- Worl wide stats  -->
+	<property id="ww_url" type="string">https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php</property>
+	<property id="api_host" type="string">coronavirus-monitor.p.rapidapi.com</property>	
+
+	<!--  Country stats -->
+	<property id="cl_country_url" type="string">https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php</property>
+
+	<!-- trueway is fucking fremium -->
+	<!-- 	
+	<property id="api_host_trueway" type="string">trueway-geocoding.p.rapidapi.com</property>
+	<property id="rgeo_url" type="string">https://trueway-geocoding.p.rapidapi.com/ReverseGeocode</property>
+ 	-->
+
+	<!-- Reverse GeoCoding API --> 	
+	<!--  https://rapidapi.com/Noggle/api/reverse-geocoding-and-geolocation-service?endpoint=5b6b4b8ae4b0aa2f76d1ff84 -->
+	<property id="api_host_noggle" type="string">geocodeapi.p.rapidapi.com</property>
+	<property id="rgeo_url_noggle" type="string">https://geocodeapi.p.rapidapi.com/GetNearestCities</property>
+		
+</properties>

@@ -168,7 +168,7 @@ class COVID19WatchFaceView extends WatchUi.WatchFace {
     }
     
     //find drawable and update text by formatted rez and value *** NOT TESTED YET !!!
-    //NOT FINISHED YET
+    //NOT FINISHED YET - but will be completed tomo
     /*
     function updLbl(lblId, frmtTmplt, rezId, val){
     	var dtu = View.findDrawableById(lblId);

@@ -33,6 +33,13 @@ function smartFormatter(num){
 	return origNumStr;
 }    
 
+function strSelector(longStr, shortStr, maxLen){
+	//$.logMessage(longStr +", " + shortStr + ", " + maxLen);
+	if(longStr != null && longStr instanceof Lang.String && longStr.length() <= maxLen){
+		return longStr;
+	}
+	return shortStr;
+}
 
 (:debug)
 // displays human redable last update like 2 mins ago OR 3 hours ago //updatedStringFromatter
@@ -55,7 +62,7 @@ function lastUpdFormatter(lastUpdated){
 				updString = Lang.format(WatchUi.loadResource(Rez.Strings.minutesAgo) , [sinceUpdateMins]);
 			}
 	}		
-	return "~" + updString;
+	return "Ⓓ" + updString;
 }
 
 (:release)
@@ -78,5 +85,5 @@ function lastUpdFormatter(lastUpdated){
 				updString = Lang.format(WatchUi.loadResource(Rez.Strings.minutesAgo) , [sinceUpdateMins]);
 			}
 	}		
-	return "·" + updString;
+	return "~" + updString;
 }

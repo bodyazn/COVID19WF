@@ -17,17 +17,17 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
 	
 	function enterReq(){
 		reqCounter ++;
-		System.println("enterReq: " + reqCounter);
+		$.logMessage("enterReq: " + reqCounter);
 	}
 	
 	function exitReq(){
 		reqCounter --;
-		System.println("exitReq: " + reqCounter);
+		$.logMessage("exitReq: " + reqCounter);
 		return (reqCounter == 0);
 	}
 		
 	function initialize() {
-		//Sys.println(" *** Printed by BgbgServiceDelegate initialize() first line ***");
+		//$.logMessage(" *** Printed by BgbgServiceDelegate initialize() first line ***");
 		Sys.ServiceDelegate.initialize();
 		inBackground=true;
 	}
@@ -39,8 +39,8 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
 		var curLoc = Activity.getActivityInfo().currentLocation; 
 		if(curLoc != null){
 	    	makeRequest_rGeo(curLoc);
-	    }else if(Storage.getValue("country") != null){
-	    	makeRequest_country(Storage.getValue("country"));
+	    }else if(Storage.getValue("countryId2") != null){
+	    	makeRequest_countryId2(Storage.getValue("countryId2"));
 	    }
 	            
     }
@@ -61,7 +61,7 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
 				
        	//Sys.println(bgData);
    		if(exitReq()){
-			System.println("onReceive EXIT");
+			$.logMessage("onReceive EXIT");
 			Background.exit(bgData);
 		}
 	}
@@ -88,7 +88,8 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
 
 	function onReceive_country(responseCode, data) {	
        if (responseCode == 200) {
-           //System.println("onReceive_country: " +data); 
+           //System.println("onReceive_country: " +data);
+           $.logMessage("onReceive_country: " +data); 
            // ***  Array Out Of Bounds Error & Unhandled Exception
 			try{
 	           if(data["latest_stat_by_country"] instanceof Array && data["latest_stat_by_country"].size() > 0){
@@ -111,14 +112,23 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
        
        	//System.println(bgData);
 		if(exitReq()){
-			System.println("onReceive_country EXIT");
+			$.logMessage("onReceive_country EXIT");
 			Background.exit(bgData);
 		}
 	}
-		
+
+/*	
+	//by country name like USA, but reverse geocoding can return United States of America what requires translation	
 	function makeRequest_country(cname) {
       	var params = {"country" => cname};
        	Communications.makeWebRequest(Application.Properties.getValue("cl_country_url"), params, getOpts(), method(:onReceive_country));
+       	enterReq();
+  	}
+*/  	
+  	//by ISO ALPHA-2 code like US
+  	function makeRequest_countryId2(cId2) {
+      	var params = {"alpha2" => cId2};
+       	Communications.makeWebRequest(Application.Properties.getValue("cl_countryId2_url"), params, getOpts(), method(:onReceive_country));
        	enterReq();
   	} 
 
@@ -141,7 +151,9 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
        //System.println(options);
 		return options;
 	}
-
+	
+//Not used any more cos of ISO ALPHA-2 code implementation
+/*	
 	function translateCountry(cname){
 		cname = trimStr(cname); //some countries can be returned by reverse GeoCoding with trailing or leading space(s)
 		var countriesDic = Application.getApp().loadResource(Rez.JsonData.countriesDic);
@@ -176,26 +188,30 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
 		}
 		return null; // or it can be str in case we are don't care for input / output types
 	}
+*/	
 
-	function onReceive_rGeo(responseCode, data) {		
-		//Sys.println("onReceive_rGeo: " + responseCode + " " + data);		
+	function onReceive_rGeo(responseCode, data) {			
+		$.logMessage("onReceive_rGeo: " + responseCode + " " + data);	
 		if(data != null){
 			try{
 				//var res = data["results"];
 				var fitem = data[0];
 				var country = fitem["Country"];
+				var countryId2 = fitem["CountryId"];
 				if(country != null){
-					bgData["country"] = translateCountry(country);
-					//System.println("bgData Country Name is translated: " + bgData);
+					bgData["country"] = country; //translateCountry(country); //not used any more as ISO ALPHA-2 code is more relaible 
+					bgData["countryId2"] = countryId2;
+					$.logMessage("bgData Country Name and ISO2 were added: " + bgData);
 				}
 			}catch(e){}
 		}
 		if(bgData["country"] != null){
-			makeRequest_country(bgData["country"]);
+			//makeRequest_country(bgData["country"]);
+			makeRequest_countryId2(bgData["countryId2"]);
 		}
 		
 		if(exitReq()){
-			System.println("onReceive_rGeo EXIT");
+			$.logMessage("onReceive_rGeo EXIT");
 			Background.exit(bgData);
 		}
 	}

@@ -10,6 +10,7 @@
 
 	<!--  Country stats -->
 	<property id="cl_country_url" type="string">https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php</property>
+	<property id="cl_countryId2_url" type="string">https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_iso_alpha_2.php</property>
 
 	<!-- trueway is fucking fremium -->
 	<!-- 	

@@ -50,9 +50,6 @@ class COVID19WatchFaceApp extends Application.AppBase {
     
     
     function getServiceDelegate(){
-    	var now=System.getClockTime();
-    	var ts=now.hour+":"+now.min.format("%02d");    
-    	System.println("getServiceDelegate: "+ts);
         return [new BgDataProvider()];
     }
     
@@ -69,8 +66,8 @@ class COVID19WatchFaceApp extends Application.AppBase {
     		Background.registerForTemporalEvent(new Time.Duration(60 * 30));
     		if(data["country_data"] == null && bgData != null){
     			
-    			System.println(bgData);
-    			System.println(data);
+    			$.logMessage("bgData: " + bgData);
+    			$.logMessage("data: " + data);
     			
     			bgData["data"] = data["data"];
     			bgData["responseCode"] = data["responseCode"];
@@ -85,6 +82,7 @@ class COVID19WatchFaceApp extends Application.AppBase {
         if(data != null){
         	if(data["country"] != null){
         		Storage.setValue("country", data["country"]);
+        		Storage.setValue("countryId2", data["countryId2"]);
         	}
         }
         

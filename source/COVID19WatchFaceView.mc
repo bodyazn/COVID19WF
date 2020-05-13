@@ -6,6 +6,7 @@ using Toybox.Activity;
 using Toybox.ActivityMonitor;
 using Toybox.Time.Gregorian;
 using Toybox.Math;
+using Toybox.Application.Storage;
 
 class COVID19WatchFaceView extends WatchUi.WatchFace {
 
@@ -107,7 +108,7 @@ class COVID19WatchFaceView extends WatchUi.WatchFace {
         
         if(country_data != null && dataToShow != null){
         	var cnCaption = View.findDrawableById("CnLbl");
-	        cnCaption.setText("   " + country_data["country_name"]);	        
+	        cnCaption.setText("   " + $.strSelector(country_data["country_name"], Storage.getValue("countryId2"), 11));	        
 	        
  	        var newCasesCaption = View.findDrawableById("NCLbl");
 	        newCasesCaption.setText(WatchUi.loadResource(Rez.Strings.newCases) + dataToShow["new_cases"] + " ");	        

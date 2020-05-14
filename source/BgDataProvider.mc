@@ -120,7 +120,7 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
 	
 	//by country name like USA, but reverse geocoding can return United States of America what requires translation	
 	function makeRequest_country(cname) {
-		$.logMessage("makeRequest_country: " + cname);
+		//$.logMessage("makeRequest_country: " + cname);
       	var params = {"country" => cname};
        	Communications.makeWebRequest(Application.Properties.getValue("cl_country_url"), params, getOpts(), method(:onReceive_country));
        	enterReq();
@@ -128,7 +128,7 @@ class BgDataProvider extends Toybox.System.ServiceDelegate {
   	
   	//by ISO ALPHA-2 code like US
   	function makeRequest_countryId2(cId2) {
-      	$.logMessage("makeRequest_countryId2: " + cId2);
+      	//$.logMessage("makeRequest_countryId2: " + cId2);
       	var params = {"alpha2" => cId2};
        	Communications.makeWebRequest(Application.Properties.getValue("cl_countryId2_url"), params, getOpts(), method(:onReceive_country));
        	enterReq();
